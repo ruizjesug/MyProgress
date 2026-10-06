@@ -1,12 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { router } from "expo-router";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>MyProgress</Text>
+
       <Text style={styles.subtitle}>
         Seguimiento de mis rutinas de gimnasio
       </Text>
+
+      <Button title="Iniciar sesión" onPress={() => router.push("/login")} />
     </View>
   );
 }
@@ -28,5 +32,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     textAlign: "center",
+    marginBottom: 20,
   },
 });
