@@ -18,7 +18,12 @@ export default function LoginScreen() {
     const usuario = JSON.parse(usuarioGuardado);
 
     if (correo === usuario.correo && contrasena === usuario.contrasena) {
-      Alert.alert("Correcto", "Sesión iniciada");
+      Alert.alert("Correcto", "Sesión iniciada", [
+        {
+          text: "Aceptar",
+          onPress: () => router.push("/home"),
+        },
+      ]);
     } else {
       Alert.alert("Error", "Correo o contraseña incorrectos");
     }
